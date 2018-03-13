@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-	// Use this for initialization
+    public string controlType; //Vertical or Horizontal
+    public float speed;
+
+    private Rigidbody2D rBody;
+
+
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    private void FixedUpdate()
+    {
+        float moveVertical = Input.GetAxis(controlType);
+
+        Vector2 movement = new Vector2(0, moveVertical);
+
+        rBody = this.gameObject.GetComponent<Rigidbody2D>();
+        rBody.velocity = movement * speed;
+    }
 }
