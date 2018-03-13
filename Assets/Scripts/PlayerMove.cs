@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-    public string controlType; //Vertical or Horizontal
+    public string controlType; //Vertical or Vertical2
     public float speed;
 
     private Rigidbody2D rBody;

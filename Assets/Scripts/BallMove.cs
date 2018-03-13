@@ -12,8 +12,8 @@ public class BallMove : MonoBehaviour {
     
     void Start () {
 
-        float rand = Random.Range(0, 1);
-        if (rand < 0.5)
+        float rand = Random.Range(0, 2);
+        if (rand < 1)
             movement = new Vector2(1, -0.2f);
         else
             movement = new Vector2(-1, -0.2f);
