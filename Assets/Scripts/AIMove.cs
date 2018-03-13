@@ -4,13 +4,36 @@ using UnityEngine;
 
 public class AIMove : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    public float speed;
+
+    float targetY, thisY, moveY;
+
+    private Rigidbody2D rBody;
+    int timer;
+
+    void Start () {
+        timer = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+	void FixedUpdate () {
+        GameObject ball = GameObject.Find("Ball(Clone)");
+        targetY = ball.transform.position.y;
+        thisY = transform.position.y;
+        if (targetY - thisY > 0.5) 
+            moveY = 1;
+        if (targetY - thisY < -0.5)
+            moveY = -1;
+
+        timer++;
+        if (timer >= 30)
+        {
+            speed = Random.Range(3, 8);
+            timer = 0;
+        }
+
+        Vector2 movement = new Vector2(0, moveY);
+        rBody = this.gameObject.GetComponent<Rigidbody2D>();
+        rBody.velocity = movement * speed;
+
+    }
 }

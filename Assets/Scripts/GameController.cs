@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
 
     private void Reset()
     {
-        Destroy(GameObject.Find("Ball(clone)"));
+        Destroy(GameObject.Find("Ball(Clone)"));
         ScoreController.score.Reset(); // Resets the scoreboard
         ready = true;
     }

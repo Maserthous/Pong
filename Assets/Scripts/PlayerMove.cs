@@ -14,10 +14,6 @@ public class PlayerMove : MonoBehaviour {
 		
 	}
 	
-	void Update () {
-		
-	}
-
     private void FixedUpdate()
     {
         float moveVertical = Input.GetAxis(controlType);
